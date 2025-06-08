@@ -1,0 +1,26 @@
+---
+title: "193DS_file"
+format: html
+author: Mariko Bronson
+date: 06-08-2025
+---
+
+```{r data-and-packages}
+
+#installing packages
+library(tidyverse)
+library(here)
+library(janitor)
+library(flextable)
+library(readxl)
+library(ggplot2)
+library(colorspace)
+library(dplyr) 
+
+#create object screentime from my data
+screentime <- read_xlsx(
+  here("data", "193DS_screentime_updated.xlsx"),
+  sheet = "Sheet1")
+
+```
+
