@@ -22,6 +22,11 @@ library(readxl)
 library(ggplot2)
 library(colorspace)
 library(dplyr) 
+library(lterdatasampler)
+
+#create object sst 
+sst <- read_csv(
+  here("data", "SST.csv"))
 
 #create object screentime from my data
 screentime <- read_xlsx(
@@ -43,3 +48,31 @@ In part 2, along with the ANOVA, he should include the effect size and the Turke
 ## c. Suggestions for rewriting
 
 Our research suggests that there is a positive correlation between annual total nitrogen load (kg/year) and distance from headwater (km) in the San Joaquin Delta River(Pearson's correlation, r = correlation coefficient, p = 0.03, $\\alpha$ = 0.05) with a large($\\eta^2$ = effect size) effect of distance. Sources(urban land, atmospheric depostion, fertilizer, wastewater treatment, and grasslands) differed in average nitrogen load (one-way ANOVA, F(4, df) = test statistic, p = 0.02, $\\alpha$ = 0.05). We found that fertilizer had a higher nitrogen load than atmospheric deposition (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year), and atmospheric deposition had a higher nitrogen load than wastewater treatment (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year).
+
+# Problem 2:
+
+## a. Cleaning and summarizing
+
+```{r cleaning-and-summarizing}
+
+#create sst_clean
+sst_clean <- sst |> 
+  select(date, temp) |> 
+#select 2018-2023
+  filter(year(date) >= 2018 & year(date) <= 2023) |> 
+# create year and month columns as factors
+  mutate(
+    year = factor(year(date)),
+    month = factor(month(date, label = TRUE))) |> 
+#delete date column
+  select(-date) |> 
+#find mean monthly sst
+  group_by(year, month) |> 
+  summarise(
+    mean_monthly_sst = mean(temp)) |> 
+  ungroup()
+
+slice_sample(sst_clean, n = 5)
+str(sst_clean)
+```
+
