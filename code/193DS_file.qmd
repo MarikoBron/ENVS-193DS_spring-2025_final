@@ -66,13 +66,33 @@ sst_clean <- sst |>
     month = factor(month(date, label = TRUE))) |> 
 #delete date column
   select(-date) |> 
-#find mean monthly sst
+#calculate mean monthly sst
   group_by(year, month) |> 
   summarise(
     mean_monthly_sst = mean(temp)) |> 
+#ungroup 
   ungroup()
 
+#display 5 random points
 slice_sample(sst_clean, n = 5)
+#check structure
 str(sst_clean)
 ```
+
+## b. Visualize the data
+
+```{r recreating-graph}
+
+#start ggplot, choose axes and group by color
+ggplot(sst_clean,
+       aes(x = month,
+           y = mean_monthly_sst,
+           color = year)) +
+  geom_point(
+    
+  )
+  
+
+```
+
 
