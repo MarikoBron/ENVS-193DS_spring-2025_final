@@ -1,9 +1,15 @@
 ---
 title: "193DS_file"
-format: html
 author: Mariko Bronson
 date: 06-08-2025
+format:
+  html:
+    execute:
+      message: false 
+      warning: false 
 ---
+
+https://github.com/MarikoBron/ENVS-193DS_spring-2025_final.git
 
 ```{r data-and-packages}
 
@@ -23,4 +29,16 @@ screentime <- read_xlsx(
   sheet = "Sheet1")
 
 ```
+
+# Problem 1: Research Writing
+
+## a. Transparent statistical methods
+
+In part 1, they used a Pearson's correlation to find how the variables are related to each other. In part 2, they used an ANOVA to find whether the means of multiple groups.
+
+## b. More information needed
+
+In part 2, along with the ANOVA, he should include the effect size and the Turkey HSD. The ANOVA tells you whether there is a difference in the means, and the effect size tells you how large of an effect sources have on the difference. This is important because it helps you find out what might be causing these differences. The ANOVA tells you whether differences are present, and the Turkey HSD will tell you which groups are different and by how much. 
+
+## c. 
 
