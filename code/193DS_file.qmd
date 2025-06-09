@@ -87,11 +87,25 @@ str(sst_clean)
 ggplot(sst_clean,
        aes(x = month,
            y = mean_monthly_sst,
-           color = year)) +
-  geom_point(
-    
-  )
+           color = year,
+           group = year)) +
+#adding points
+   geom_point() +
+#adding lines
+  geom_line() +
+#adding labels
+  labs(x = "Month",
+       y = "Mean Monthly Sea Surface Temperature",
+       color = "Year") +
+#cleaner background, scootch the legend
+   theme_minimal() +
+    theme(
+    panel.grid = element_blank(),
+    panel.border = element_rect(fill = NA),
+    legend.position = c(0.1,0.75)) +
   
+#cute colors
+scale_color_discrete_sequential(palette = "Purp") 
 
 ```
 
