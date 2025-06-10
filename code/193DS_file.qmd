@@ -24,6 +24,7 @@ library(colorspace)
 library(dplyr) 
 library(lterdatasampler)
 library(DHARMa)
+library(MuMIn)
 
 #create object sst 
 sst <- read_csv(
@@ -131,7 +132,7 @@ The seasons refer to the years 2016 and 2019, which are important because mass t
 ## d. Table of models
 
 | Model number | Season | Distance to Forest Edge | Model Description |
-|:--------------:|:--------------:|:---------------:|:----------------------|
+|:---------------:|:---------------:|:---------------:|:---------------------|
 | 0 |  |  | no predictors (null model) |
 | 1 | X | X | all predictors (saturated model) |
 | 2 |  | X | distance to forest edge |
@@ -174,8 +175,7 @@ model3 <- glm(
 ## f. Check the diagnostics
 
 ```{r diagnostics}
-#fit 4 plots
-par(mfrow = c(2, 2)) 
+
 #create 4 plots of residual diagnostics
  plot(
   simulateResiduals(model0)) 
@@ -188,6 +188,19 @@ par(mfrow = c(2, 2))
   
  plot(
   simulateResiduals(model3))
-  
 
 ```
+
+## g. Select the best model
+
+```{r model-selection}
+
+#create AIC model selection table
+AICc(model0,
+          model1, 
+          model2, 
+          model3)
+
+```
+
+The best model that predicts the presence of a swift parrot as determined by Akaike’s Information Criterion (AIC) includes the season and distance from the edge.
