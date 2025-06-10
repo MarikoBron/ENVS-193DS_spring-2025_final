@@ -90,7 +90,7 @@ str(sst_clean)
 
 ```{r recreating-graph}
 
-#start ggplot, choose axes and group by color
+#start ggplot, choose axes and group and color by year
 ggplot(sst_clean,
        aes(x = month,
            y = mean_monthly_sst,
@@ -104,7 +104,7 @@ ggplot(sst_clean,
   labs(x = "Month",
        y = "Mean Monthly Sea Surface Temperature(°C)",
        color = "Year") +
-#cleaner background, scootch the legend
+#cleaner background, scootch the legend 
    theme_minimal() +
     theme(
     panel.grid = element_blank(),
@@ -142,7 +142,7 @@ The seasons refer to the years 2016 and 2019, which are important because mass t
 ## e. Run the models
 
 ```{r cleandat, echo = FALSE}
-nest_boxes_clean <- clean_names(nest_boxes)
+nest_boxes_clean <- clean_names(nest_boxes) 
 ```
 
 ```{r models}
@@ -200,7 +200,7 @@ model3 <- glm(
 
 ```{r model-selection}
 
-#create AIC model selection table
+#create AIC model selection table to pick best model
 AICc(model0,
           model1, 
           model2, 
@@ -218,7 +218,7 @@ The best model that predicts the presence of a swift parrot as determined by Aka
 mod_preds <- ggpredict(model1,
                        terms = c("edge_distance [all]", "season"))
 #plot model predictions
-ggplot(mod_preds, #create plot frame
+ggplot(mod_preds, #create plot frame w model predictions
        aes(
          x = x,
        y = predicted,
@@ -277,7 +277,7 @@ print(mod_preds_95) #displaying results
 
 In 2016, the predicted probability of nest box occupancy by Swift Parrots is 48% at 0 m from the forest edge and 12% at 900 m from the forest edge based on ggpredict results. In 2019, predicted probability of occupancy is 30% at 0 m from the forest edge and 6% at 900 m from the forest edge. There is a negative relationship between distance from the forest edge and nest box occupancy by Swift Parrots in both years. This could be because the nest boxes further from the forest edge are strongly preferred by Tree Martins, which is interesting because Tree Martins are subordinate competitors to both Swift Parrots and Common Starlings.
 
-# Problem 4: **Affective and exploratory visualizations**
+# Problem 4: Affective and exploratory visualizations
 
 ## a. Comparing visualizations
 
