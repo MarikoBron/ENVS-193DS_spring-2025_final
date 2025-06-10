@@ -131,6 +131,7 @@ window.Quarto = {
   <li><a href="#f.-check-the-diagnostics" id="toc-f.-check-the-diagnostics" class="nav-link" data-scroll-target="#f.-check-the-diagnostics">f.&nbsp;Check the diagnostics</a></li>
   <li><a href="#g.-select-the-best-model" id="toc-g.-select-the-best-model" class="nav-link" data-scroll-target="#g.-select-the-best-model">g. Select the best model</a></li>
   <li><a href="#h.-visualize-the-model-predictions" id="toc-h.-visualize-the-model-predictions" class="nav-link" data-scroll-target="#h.-visualize-the-model-predictions">h. Visualize the model predictions</a></li>
+  <li><a href="#i.-write-a-caption-for-your-figure" id="toc-i.-write-a-caption-for-your-figure" class="nav-link" data-scroll-target="#i.-write-a-caption-for-your-figure">i. Write a caption for your figure</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -241,10 +242,10 @@ window.Quarto = {
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2021  Dec               14.4
-2 2023  Sep               18.4
-3 2023  Oct               17.4
-4 2023  Dec               16.1
+1 2022  Oct               17.9
+2 2023  Aug               18.5
+3 2018  Mar               13.5
+4 2023  Jan               14.0
 5 2023  Jun               16.0</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check structure</span></span>
@@ -470,7 +471,7 @@ model3  2 236.3744</code></pre>
 <span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> predicted,</span>
 <span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymin =</span> conf.low,</span>
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymax =</span> conf.high, </span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> group <span class="co">#coloring ribbons by group</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> group  <span class="co">#coloring ribbons by group</span></span>
 <span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>              ),</span>
 <span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
 <span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> mod_preds, <span class="co">#add line with predictions</span></span>
@@ -482,7 +483,10 @@ model3  2 236.3744</code></pre>
 <span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(), <span class="co">#clean up chart</span></span>
 <span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="cn">NA</span>)</span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>) <span class="sc">+</span> </span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -491,6 +495,10 @@ model3  2 236.3744</code></pre>
 </div>
 </div>
 </div>
+</section>
+<section id="i.-write-a-caption-for-your-figure" class="level2">
+<h2 class="anchored" data-anchor-id="i.-write-a-caption-for-your-figure">i. Write a caption for your figure</h2>
+<p>Figure 1:</p>
 </section>
 </section>
 
