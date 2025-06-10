@@ -12,7 +12,6 @@ format:
 https://github.com/MarikoBron/ENVS-193DS_spring-2025_final.git
 
 ```{r data-and-packages}
-
 #installing packages
 library(tidyverse)
 library(here)
@@ -27,6 +26,10 @@ library(lterdatasampler)
 #create object sst 
 sst <- read_csv(
   here("data", "SST.csv"))
+
+#create object nest_boxes
+nest_boxes <- read_csv(
+  here("data","nest_boxes.csv"))
 
 #create object screentime from my data
 screentime <- read_xlsx(
@@ -95,7 +98,7 @@ ggplot(sst_clean,
   geom_line() +
 #adding labels
   labs(x = "Month",
-       y = "Mean Monthly Sea Surface Temperature",
+       y = "Mean Monthly Sea Surface Temperature(°C)",
        color = "Year") +
 #cleaner background, scootch the legend
    theme_minimal() +
@@ -109,4 +112,25 @@ scale_color_discrete_sequential(palette = "Purp")
 
 ```
 
+# Problem 3: Data Analysis
+
+## a. Response variable
+
+Response variable columns are labeled with abbreviated conditions of occupancy in the nest boxes(swift parrot, common starling, empty, and tree martin) where 1s refer to the condition being found to be true and 0s refer to the condition being found to be false. For example, a 1 under sp means a swift parrot was there, and a 0 under sp means a swift parrot was not there.
+
+## b. Purpose of study
+
+The main difference is that the nest boxes are intended to provide habitat for swift parrots, and the study means to investigate whether nest boxes are specialized enough to be a worthwhile and successful restoration tool. When birds besides swift parrots are found in the boxes, it indicates that the nest boxes are not working as intended.
+
+## c. Difference in "seasons"
+
+The seasons refer to the years 2016 and 2019, which are important because mass tree flowering events during these years triggered breeding events at the study site. The nest boxes were installed in 2016 to test the strategy of deploying boxes where breeding is most probable, and were checked in 2019 after to test permanent nest boxes that have been there for several years.
+
+## d. Table of models
+
+```{r table-of-models}
+
+
+
+```
 
