@@ -275,10 +275,16 @@ print(mod_preds_95) #displaying results
 
 ## k. Interpret your results
 
-In 2016, the predicted probability of nest box occupancy by Swift Parrots is 48% at 0 m from the forest edge and 12% at 900 m from the forest edge based on ggpredict results. In 2019, predicted probability of occupancy is 30% at 0 m from the forest edge and 6% at 900 m from the forest edge. There is a negative relationship between distance from the forest edge and nest box occupancy by Swift Parrots in both years.
+In 2016, the predicted probability of nest box occupancy by Swift Parrots is 48% at 0 m from the forest edge and 12% at 900 m from the forest edge based on ggpredict results. In 2019, predicted probability of occupancy is 30% at 0 m from the forest edge and 6% at 900 m from the forest edge. There is a negative relationship between distance from the forest edge and nest box occupancy by Swift Parrots in both years. This could be because the nest boxes further from the forest edge are strongly preferred by Tree Martins, which is interesting because Tree Martins are subordinate competitors to both Swift Parrots and Common Starlings.
 
--   the predicted probability of occupancy at the forest edge (0 m) and farther away from the forest edge (900 m) between seasons
+# Problem 4: **Affective and exploratory visualizations**
 
--   the relationship between distance from forest edge and probability of occupancy
+## a. Comparing visualizations
 
--   the biology behind the trends you found - what explains the relationship between distance from forest edge and probability of Swift Parrot nest box occupancy?
+The visualization I made in Homework 2 does not just suffer from a severe lack of data, but is also much less pleasant and interesting to look at. I had not yet gathered enough data to find relationships between variables, so I was not using the best predictive models. The charts are bland and have a poor ink:data ratio.
+
+There are no similarities between all three visualizations except for the fact that they all use screentime in hours as a dependent variable. Both my final visualization and my second chart focus on task to screentime relationships, though one uses tasks done and one uses tasks due.
+
+Tasks due has a stronger relationship than tasks done on screentime, but the not by much, so I was on the right track with my second visualization. Even though I only had a couple datapoints, a negative relationship between workload and screentime was already emerging. It makes sense that I'm on my phone less when I have more things to do, which does reject my initial thought that sparked this analysis.
+
+I did hadn't started my visual yet in week 9, but I did give myself mental feedback based on the projects I saw. While both were very well done, they were very similar to examples we were given, and I personally found one to be a little overwhelming to look at and the other a bit underwhelming. I decided I wanted to focus on making a visualization that is original, easy to understand, and a little funky.
