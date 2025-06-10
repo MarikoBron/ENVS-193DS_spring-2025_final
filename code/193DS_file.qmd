@@ -23,6 +23,7 @@ library(ggplot2)
 library(colorspace)
 library(dplyr) 
 library(lterdatasampler)
+library(DHARMa)
 
 #create object sst 
 sst <- read_csv(
@@ -130,14 +131,52 @@ The seasons refer to the years 2016 and 2019, which are important because mass t
 ## d. Table of models
 
 | Model number | Season | Distance to Forest Edge | Model Description |
-|:------------:|:------------:|:-----------------:|:------------------------|
+|:--------------:|:--------------:|:---------------:|:----------------------|
 | 0 |  |  | no predictors (null model) |
 | 1 | X | X | all predictors (saturated model) |
 | 2 |  | X | distance to forest edge |
 | 3 | X |  | season |
 
-```{r table-of-models}
+## e. Run the models
 
+```{r models}
 
+# model 0: null model
+model0 <- glm(
+  sp ~ 1, # formula
+  data = nest_boxes, # data frame
+  family = "binomial" #distribution
+)
+
+# model 1: saturated model
+model1 <- glm(
+  sp ~ season + `edge distance`,
+  data = nest_boxes, 
+  family = "binomial"
+)
+
+# model 2: distance to forest edge
+model2 <- glm(
+  sp ~ `edge distance`,
+  data = nest_boxes,
+  family = "binomial"
+)
+
+# model 3: season
+model3 <- glm(
+  sp ~ season,
+  data = nest_boxes,
+  family = "binomial"
+)
+
+```
+
+## f. Check the diagnostics
+
+```{r diagnostics}
+
+plot(
+  simulateResiduals(nest_boxes)
+)
 
 ```
