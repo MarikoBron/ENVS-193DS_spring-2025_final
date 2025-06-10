@@ -174,9 +174,20 @@ model3 <- glm(
 ## f. Check the diagnostics
 
 ```{r diagnostics}
-
-plot(
-  simulateResiduals(nest_boxes)
-)
+#fit 4 plots
+par(mfrow = c(2, 2)) 
+#create 4 plots of residual diagnostics
+ plot(
+  simulateResiduals(model0)) 
+  
+ plot(
+  simulateResiduals(model1))  
+  
+ plot(
+  simulateResiduals(model2)) 
+  
+ plot(
+  simulateResiduals(model3))
+  
 
 ```
