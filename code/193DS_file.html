@@ -206,7 +206,7 @@ window.Quarto = {
 <h1>Problem 1: Research Writing</h1>
 <section id="a.-transparent-statistical-methods" class="level2">
 <h2 class="anchored" data-anchor-id="a.-transparent-statistical-methods">a. Transparent statistical methods</h2>
-<p>In part 1, they used a Pearson’s correlation to find how the variables are related to each other. In part 2, they used an ANOVA to find whether the means of multiple groups.</p>
+<p>In part 1, they used a Pearson’s correlation to find how the variables are related to each other. In part 2, they used an one-way ANOVA to find whether the means of multiple groups.</p>
 </section>
 <section id="b.-more-information-needed" class="level2">
 <h2 class="anchored" data-anchor-id="b.-more-information-needed">b. More information needed</h2>
@@ -214,7 +214,7 @@ window.Quarto = {
 </section>
 <section id="c.-suggestions-for-rewriting" class="level2">
 <h2 class="anchored" data-anchor-id="c.-suggestions-for-rewriting">c.&nbsp;Suggestions for rewriting</h2>
-<p>Our research suggests that there is a positive correlation between annual total nitrogen load (kg/year) and distance from headwater (km) in the San Joaquin Delta River(Pearson’s correlation, r = correlation coefficient, p = 0.03, <span class="math inline">\(\alpha\)</span> = 0.05) with a large(<span class="math inline">\(\eta^2\)</span> = effect size) effect of distance. Sources(urban land, atmospheric depostion, fertilizer, wastewater treatment, and grasslands) differed in average nitrogen load (one-way ANOVA, F(4, df) = test statistic, p = 0.02, <span class="math inline">\(\alpha\)</span> = 0.05). We found that fertilizer had a higher nitrogen load than atmospheric deposition (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year), and atmospheric deposition had a higher nitrogen load than wastewater treatment (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year).</p>
+<p>Our research suggests that there is a positive correlation between annual total nitrogen load (kg/year) and distance from headwater (km) in the San Joaquin Delta River(Pearson’s correlation, r = correlation coefficient, p = 0.03, <span class="math inline">\(\alpha\)</span> = 0.05) with a (insert effect size)(<span class="math inline">\(\eta^2\)</span> = effect size) effect of distance. Sources(urban land, atmospheric depostion, fertilizer, wastewater treatment, and grasslands) differed in average nitrogen load (one-way ANOVA, F(4, df) = test statistic, p = 0.02, <span class="math inline">\(\alpha\)</span> = 0.05). We found that fertilizer had a higher nitrogen load than atmospheric deposition (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year), and atmospheric deposition had a higher nitrogen load than wastewater treatment (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year).</p>
 </section>
 </section>
 <section id="problem-2-data-visualization" class="level1">
@@ -246,11 +246,11 @@ window.Quarto = {
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2021  Oct               16.6
-2 2022  Aug               17.5
-3 2022  Jun               16.2
-4 2019  Oct               17.1
-5 2018  Sep               18.2</code></pre>
+1 2018  Nov               17.9
+2 2019  Aug               17.0
+3 2019  Oct               17.1
+4 2022  Mar               13.3
+5 2020  Aug               17.8</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check structure</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -310,16 +310,16 @@ window.Quarto = {
 </section>
 <section id="c.-difference-in-seasons" class="level2">
 <h2 class="anchored" data-anchor-id="c.-difference-in-seasons">c.&nbsp;Difference in “seasons”</h2>
-<p>The seasons refer to the years 2016 and 2019, which are important because mass tree flowering events during these years triggered breeding events at the study site. The nest boxes were installed in 2016 to test the strategy of deploying boxes where breeding is most probable, and were checked in 2019 after to test permanent nest boxes that have been there for several years.</p>
+<p>The seasons refer to the years 2016 and 2019, which are important because mass tree flowering events during these years triggered breeding events at the study site. The nest boxes were installed in 2016 to test the strategy of deploying boxes where breeding is most probable, and were checked in 2019 after to test permanent nest boxes that have been there for several years. Swift parrots tend to not return to the same nest, so checking permanent boxes added context to success rate of nest boxes.</p>
 </section>
 <section id="d.-table-of-models" class="level2">
 <h2 class="anchored" data-anchor-id="d.-table-of-models">d.&nbsp;Table of models</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 29%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -346,13 +346,13 @@ window.Quarto = {
 <td style="text-align: center;">2</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;">X</td>
-<td style="text-align: left;">distance to forest edge</td>
+<td style="text-align: left;">distance to forest edge only</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">X</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">season</td>
+<td style="text-align: left;">season only</td>
 </tr>
 </tbody>
 </table>
@@ -464,36 +464,44 @@ model3  2 236.3744</code></pre>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Distance from the forest edge (m)"</span>,</span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Probability of box occupancy"</span>, <span class="co">#labeling axes</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"season"</span>,</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"season"</span>  <span class="co"># fix legend to match underlying data points </span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Season"</span>,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Season"</span>  <span class="co"># fix legend to match underlying data points </span></span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="co">#add transparent underlying data points</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> mod_preds, <span class="co">#add ribbon with predictions and CI</span></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">x =</span> x,</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> predicted,</span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymin =</span> conf.low,</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymax =</span> conf.high, </span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> group  <span class="co">#coloring ribbons by group</span></span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>              ),</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> mod_preds, <span class="co">#add line with predictions</span></span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>              <span class="at">x =</span> x,</span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> predicted </span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>            ))  <span class="sc">+</span></span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co">#clean up chart</span></span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(), <span class="co">#clean up chart</span></span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="cn">NA</span>)</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>) <span class="sc">+</span> </span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>) <span class="co">#choose colors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> nest_boxes_clean, <span class="co">#add transparent underlying data points</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>                 <span class="at">x =</span> edge_distance, </span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> sp,</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> season,</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> season <span class="co">#color points</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>               ),</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>               <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">2</span>,</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> mod_preds, <span class="co">#add ribbon with predictions and CI</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>                <span class="at">x =</span> x,</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> predicted,</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymin =</span> conf.low,</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymax =</span> conf.high, </span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>                <span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> group  <span class="co">#coloring ribbons by group</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>              ),</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> mod_preds, <span class="co">#add line with predictions</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>              <span class="at">x =</span> x,</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> predicted </span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>            ))  <span class="sc">+</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co">#clean up chart</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(), <span class="co">#clean up chart</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="cn">NA</span>)</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>) <span class="sc">+</span> </span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>) <span class="co">#choose colors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
