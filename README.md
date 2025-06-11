@@ -9,16 +9,13 @@ This repo is mine (GitHub username: MarikoBron)
 
 ## Data and File Overview:
 
-There is a data folder, which stores all data sets used, and a code folder, which stores all of my code.
+There is a data folder, which stores all data sets used, and a code folder, which stores  my code.
 
 The data set SST.csv contains data from: 
 Saleh, Dina and Joseph Domagalski. 2021. “Concentrations, Loads, and Associated Trends of Nutrients Entering the Sacramento–San Joaquin Delta, California.” San Francisco Estuary and Watershed Science. DOI: 10.15447/sfews.2021v19iss4art6.
 
 The data set nest_boxes.csv contains data from: 
 Stojanovic, Dejan et al. (2021). Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird [Dataset]. Dryad. https://doi.org/10.5061/dryad.83bk3j9sb
-
-The data set 193DS_screentime_updated.xlsx contains 30 data points which I collected from 4/23/25 to 5/29/25.
-
 
 ## Rendered Output:
 

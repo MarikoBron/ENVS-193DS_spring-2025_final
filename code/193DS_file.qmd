@@ -35,22 +35,17 @@ sst <- read_csv(
 nest_boxes <- read_csv(
   here("data","nest_boxes.csv"))
 
-#create object screentime from my data
-screentime <- read_xlsx(
-  here("data", "193DS_screentime_updated.xlsx"),
-  sheet = "Sheet1")
-
 ```
 
 # Problem 1: Research Writing
 
 ## a. Transparent statistical methods
 
-In part 1, they used a Pearson's correlation to find how the variables are related to each other. In part 2, they used an ANOVA to find whether the means of multiple groups.
+In part 1, they used a Pearson's correlation to find how the variables are related to each other. In part 2, they used an one-way ANOVA to find whether the means of multiple groups.
 
 ## b. More information needed
 
-In part 2, along with the ANOVA, he should include the effect size and the Turkey HSD. The ANOVA tells you whether there is a difference in the means, and the effect size tells you how large of an effect sources have on the difference. This is important because it helps you find out what might be causing these differences. The ANOVA tells you whether differences are present, and the Turkey HSD will tell you which groups are different and by how much.
+In part 2, along with the ANOVA, he should include the effect size and the Turkey HSD. The ANOVA tells you whether there is a difference in the means, and the effect size tells you how large of an effect sources have on the difference. This is important because it helps you find out what might be causing these differences. The Turkey HSD elaborates further by telling you which groups are different and by how much.
 
 ## c. Suggestions for rewriting
 
@@ -142,7 +137,8 @@ The seasons refer to the years 2016 and 2019, which are important because mass t
 ## e. Run the models
 
 ```{r cleandat, echo = FALSE}
-nest_boxes_clean <- clean_names(nest_boxes) 
+nest_boxes_clean <- clean_names(nest_boxes) |> 
+  mutate(season = factor(season))
 ```
 
 ```{r models}
@@ -226,17 +222,26 @@ ggplot(mod_preds, #create plot frame w model predictions
   labs(
     x = "Distance from the forest edge (m)",
     y = "Probability of box occupancy", #labeling axes
-    color = "season",
-    fill = "season"  # fix legend to match underlying data points 
+    color = "Season",
+    fill = "Season"  # fix legend to match underlying data points 
   ) +
-    geom_point(size = 1, #add transparent underlying data points
-               alpha = 0.4) +
+    geom_point(data = nest_boxes_clean, #add transparent underlying data points
+               aes(
+                 x = edge_distance, 
+                 y = sp,
+                 color = season,
+                 fill = season #color points
+               ),
+               inherit.aes = FALSE,
+               size = 2,
+              alpha = 0.2) +
   geom_ribbon(data = mod_preds, #add ribbon with predictions and CI
               aes(
                 x = x,
                 y = predicted,
                 ymin = conf.low,
                 ymax = conf.high, 
+                alpha = 0.4,
       fill = group  #coloring ribbons by group
               ),
               alpha = 0.4) +
@@ -245,6 +250,8 @@ ggplot(mod_preds, #create plot frame w model predictions
               x = x,
               y = predicted 
             ))  +
+  scale_y_continuous(limits = c(0,1),
+                     breaks = c(0,1)) +
   theme_minimal() + #clean up chart
   theme(
     panel.grid = element_blank(), #clean up chart

@@ -116,7 +116,7 @@ window.Quarto = {
   <li><a href="#b.-more-information-needed" id="toc-b.-more-information-needed" class="nav-link" data-scroll-target="#b.-more-information-needed">b. More information needed</a></li>
   <li><a href="#c.-suggestions-for-rewriting" id="toc-c.-suggestions-for-rewriting" class="nav-link" data-scroll-target="#c.-suggestions-for-rewriting">c.&nbsp;Suggestions for rewriting</a></li>
   </ul></li>
-  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2:</a>
+  <li><a href="#problem-2-data-visualization" id="toc-problem-2-data-visualization" class="nav-link" data-scroll-target="#problem-2-data-visualization">Problem 2: <strong>Data visualization</strong></a>
   <ul class="collapse">
   <li><a href="#a.-cleaning-and-summarizing" id="toc-a.-cleaning-and-summarizing" class="nav-link" data-scroll-target="#a.-cleaning-and-summarizing">a. Cleaning and summarizing</a></li>
   <li><a href="#b.-visualize-the-data" id="toc-b.-visualize-the-data" class="nav-link" data-scroll-target="#b.-visualize-the-data">b. Visualize the data</a></li>
@@ -138,7 +138,7 @@ window.Quarto = {
   <li><a href="#j.-calculate-model-predictions" id="toc-j.-calculate-model-predictions" class="nav-link" data-scroll-target="#j.-calculate-model-predictions">j. Calculate model predictions</a></li>
   <li><a href="#k.-interpret-your-results" id="toc-k.-interpret-your-results" class="nav-link" data-scroll-target="#k.-interpret-your-results">k. Interpret your results</a></li>
   </ul></li>
-  <li><a href="#problem-4-affective-and-exploratory-visualizations" id="toc-problem-4-affective-and-exploratory-visualizations" class="nav-link" data-scroll-target="#problem-4-affective-and-exploratory-visualizations">Problem 4: <strong>Affective and exploratory visualizations</strong></a>
+  <li><a href="#problem-4-affective-and-exploratory-visualizations" id="toc-problem-4-affective-and-exploratory-visualizations" class="nav-link" data-scroll-target="#problem-4-affective-and-exploratory-visualizations">Problem 4: Affective and exploratory visualizations</a>
   <ul class="collapse">
   <li><a href="#a.-comparing-visualizations" id="toc-a.-comparing-visualizations" class="nav-link" data-scroll-target="#a.-comparing-visualizations">a. Comparing visualizations</a></li>
   </ul></li>
@@ -200,12 +200,7 @@ window.Quarto = {
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#create object nest_boxes</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>nest_boxes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"nest_boxes.csv"</span>))</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#create object screentime from my data</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>screentime <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"193DS_screentime_updated.xlsx"</span>),</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">sheet =</span> <span class="st">"Sheet1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"nest_boxes.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="problem-1-research-writing" class="level1">
 <h1>Problem 1: Research Writing</h1>
@@ -215,15 +210,15 @@ window.Quarto = {
 </section>
 <section id="b.-more-information-needed" class="level2">
 <h2 class="anchored" data-anchor-id="b.-more-information-needed">b. More information needed</h2>
-<p>In part 2, along with the ANOVA, he should include the effect size and the Turkey HSD. The ANOVA tells you whether there is a difference in the means, and the effect size tells you how large of an effect sources have on the difference. This is important because it helps you find out what might be causing these differences. The ANOVA tells you whether differences are present, and the Turkey HSD will tell you which groups are different and by how much.</p>
+<p>In part 2, along with the ANOVA, he should include the effect size and the Turkey HSD. The ANOVA tells you whether there is a difference in the means, and the effect size tells you how large of an effect sources have on the difference. This is important because it helps you find out what might be causing these differences. The Turkey HSD elaborates further by telling you which groups are different and by how much.</p>
 </section>
 <section id="c.-suggestions-for-rewriting" class="level2">
 <h2 class="anchored" data-anchor-id="c.-suggestions-for-rewriting">c.&nbsp;Suggestions for rewriting</h2>
-<p>Our research suggests that there is a positive correlation between annual total nitrogen load (kg/year) and distance from headwater (km) in the San Joaquin Delta River(Pearson’s correlation, r = correlation coefficient, p = 0.03, <span class="math inline">\(\\alpha\)</span> = 0.05) with a large(<span class="math inline">\(\\eta^2\)</span> = effect size) effect of distance. Sources(urban land, atmospheric depostion, fertilizer, wastewater treatment, and grasslands) differed in average nitrogen load (one-way ANOVA, F(4, df) = test statistic, p = 0.02, <span class="math inline">\(\\alpha\)</span> = 0.05). We found that fertilizer had a higher nitrogen load than atmospheric deposition (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year), and atmospheric deposition had a higher nitrogen load than wastewater treatment (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year).</p>
+<p>Our research suggests that there is a positive correlation between annual total nitrogen load (kg/year) and distance from headwater (km) in the San Joaquin Delta River(Pearson’s correlation, r = correlation coefficient, p = 0.03, <span class="math inline">\(\alpha\)</span> = 0.05) with a large(<span class="math inline">\(\eta^2\)</span> = effect size) effect of distance. Sources(urban land, atmospheric depostion, fertilizer, wastewater treatment, and grasslands) differed in average nitrogen load (one-way ANOVA, F(4, df) = test statistic, p = 0.02, <span class="math inline">\(\alpha\)</span> = 0.05). We found that fertilizer had a higher nitrogen load than atmospheric deposition (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year), and atmospheric deposition had a higher nitrogen load than wastewater treatment (Tukey HSD, p = significance, 95% confidence interval: [lower CI, upper CI] kg/year).</p>
 </section>
 </section>
-<section id="problem-2" class="level1">
-<h1>Problem 2:</h1>
+<section id="problem-2-data-visualization" class="level1">
+<h1>Problem 2: <strong>Data visualization</strong></h1>
 <section id="a.-cleaning-and-summarizing" class="level2">
 <h2 class="anchored" data-anchor-id="a.-cleaning-and-summarizing">a. Cleaning and summarizing</h2>
 <div class="cell">
@@ -251,11 +246,11 @@ window.Quarto = {
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2023  Sep               18.4
-2 2019  Nov               16.8
-3 2019  Sep               18.8
-4 2023  Apr               12.4
-5 2019  Aug               17.0</code></pre>
+1 2021  Oct               16.6
+2 2022  Aug               17.5
+3 2022  Jun               16.2
+4 2019  Oct               17.1
+5 2018  Sep               18.2</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check structure</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -270,7 +265,7 @@ window.Quarto = {
 <section id="b.-visualize-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="b.-visualize-the-data">b. Visualize the data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#start ggplot, choose axes and group by color</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#start ggplot, choose axes and group and color by year</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sst_clean,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> month,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> mean_monthly_sst,</span>
@@ -284,7 +279,7 @@ window.Quarto = {
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Month"</span>,</span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mean Monthly Sea Surface Temperature(°C)"</span>,</span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Year"</span>) <span class="sc">+</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#cleaner background, scootch the legend</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#cleaner background, scootch the legend </span></span>
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
@@ -439,7 +434,7 @@ window.Quarto = {
 <section id="g.-select-the-best-model" class="level2">
 <h2 class="anchored" data-anchor-id="g.-select-the-best-model">g. Select the best model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create AIC model selection table</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create AIC model selection table to pick best model</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AICc</span>(model0,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>          model1, </span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>          model2, </span>
@@ -461,7 +456,7 @@ model3  2 236.3744</code></pre>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>mod_preds <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(model1,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"edge_distance [all]"</span>, <span class="st">"season"</span>))</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#plot model predictions</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mod_preds, <span class="co">#create plot frame</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mod_preds, <span class="co">#create plot frame w model predictions</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> x,</span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> predicted,</span>
@@ -480,22 +475,25 @@ model3  2 236.3744</code></pre>
 <span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> predicted,</span>
 <span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymin =</span> conf.low,</span>
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymax =</span> conf.high, </span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> group  <span class="co">#coloring ribbons by group</span></span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>              ),</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> mod_preds, <span class="co">#add line with predictions</span></span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>              <span class="at">x =</span> x,</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> predicted </span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>            ))  <span class="sc">+</span></span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co">#clean up chart</span></span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(), <span class="co">#clean up chart</span></span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="cn">NA</span>)</span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>) <span class="sc">+</span> </span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>) <span class="co">#choose colors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> group  <span class="co">#coloring ribbons by group</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>              ),</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> mod_preds, <span class="co">#add line with predictions</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>              <span class="at">x =</span> x,</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> predicted </span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>            ))  <span class="sc">+</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co">#clean up chart</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(), <span class="co">#clean up chart</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="cn">NA</span>)</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>) <span class="sc">+</span> </span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete_diverging</span>(<span class="at">palette =</span> <span class="st">"Tropic"</span>) <span class="co">#choose colors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -544,7 +542,7 @@ edge_distance | Predicted |     95% CI
 </section>
 </section>
 <section id="problem-4-affective-and-exploratory-visualizations" class="level1">
-<h1>Problem 4: <strong>Affective and exploratory visualizations</strong></h1>
+<h1>Problem 4: Affective and exploratory visualizations</h1>
 <section id="a.-comparing-visualizations" class="level2">
 <h2 class="anchored" data-anchor-id="a.-comparing-visualizations">a. Comparing visualizations</h2>
 <p>The visualization I made in Homework 2 does not just suffer from a severe lack of data, but is also much less pleasant and interesting to look at. I had not yet gathered enough data to find relationships between variables, so I was not using the best predictive models. The charts are bland and have a poor ink:data ratio.</p>
