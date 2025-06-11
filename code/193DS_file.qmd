@@ -267,7 +267,7 @@ ggplot(mod_preds, #create plot frame w model predictions
 
 ### Figure 1: Probability of box occupancy decreases as distance from forest edge increases.
 
-Predictions and CI from the best models of occupancy of nest boxes by Swift Parrots, which are the target species of restoration efforts. Data was collected during mass breeding events in 2016, when nest boxes were first installed, and in 2019 after 3 years in place. Data sourced from: Stojanovic, Dejan et al. (2021). Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird. Dryad. <https://doi.org/10.5061/dryad.83bk3j9sb>
+Predictions and CI from the best models of occupancy of nest boxes by Swift Parrots, which are the target species of restoration efforts. Underlying data was collected during mass breeding events in 2016 (n = 104), when nest boxes were first installed, and in 2019 (n = 123) after 3 years in place. Data sourced from: Stojanovic, Dejan et al. (2021). Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird. Dryad. <https://doi.org/10.5061/dryad.83bk3j9sb>
 
 ## j. Calculate model predictions
 
